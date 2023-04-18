@@ -11,7 +11,7 @@ app.get('/', main);
 
 async function main(req, res) {
   try {
-
+    res.status(200).json({ message: 'done' })
   } catch (error) {
 
   }
