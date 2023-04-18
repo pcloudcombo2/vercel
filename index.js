@@ -13,6 +13,7 @@ app.get('/', main);
 async function main(req, res) {
   try {
     const response = await got.get('https://nowsecure.nl');
+    console.log(response);
     res.status(200).send(response.body);
   } catch (error) {
     console.log(error);
