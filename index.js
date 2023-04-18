@@ -1,11 +1,11 @@
-const express = require('express');
+import express, { json } from 'express';
 const app = express();
-const axios = require('axios');
-const cors = require('cors');
+import axios from 'axios';
+import cors from 'cors';
 
 app.listen(process.env.PORT);
 app.use(cors());
-app.use(express.json());
+app.use(json());
 
 app.get('/', main);
 
