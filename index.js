@@ -15,6 +15,7 @@ async function main(req, res) {
     const response = await got.get('https://nowsecure.nl');
     res.status(200).send(response.body);
   } catch (error) {
+    console.log(error);
     res.status(400).send(error);
 
   }
