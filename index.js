@@ -5,7 +5,7 @@ import cors from 'cors';
 // import got from 'cloudflare-scraper';
 // import Xvfb from 'xvfb';
 // const xvfb = new Xvfb();
-import { use, launch } from "puppeteer-extra";
+const { use, launch } = "puppeteer-extra";
 import pluginStealth from "puppeteer-extra-plugin-stealth";
 import { executablePath } from "puppeteer";
 
