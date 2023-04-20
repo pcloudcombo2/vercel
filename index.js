@@ -1,15 +1,16 @@
-import express, { json } from 'express';
-const app = express();
-import axios from 'axios';
-import cors from 'cors';
+const express, { json } = require('express');
+const axios = require('axios');
+const cors = require('cors');
+const pluginStealth = require("puppeteer-extra-plugin-stealth");
+const { use, launch } = require("puppeteer-extra");
+const { executablePath } = require("puppeteer");
+
 // import got from 'cloudflare-scraper';
 // import Xvfb from 'xvfb';
 // const xvfb = new Xvfb();
-const { use, launch } = "puppeteer-extra";
-import pluginStealth from "puppeteer-extra-plugin-stealth";
-import { executablePath } from "puppeteer";
 
 
+const app = express();
 app.listen(process.env.PORT);
 app.use(cors());
 app.use(json());
