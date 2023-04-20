@@ -1,8 +1,8 @@
 const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
+const puppeteer = require("puppeteer-extra");
 const pluginStealth = require("puppeteer-extra-plugin-stealth");
-const { use, launch } = require("puppeteer-extra");
 const { executablePath } = require("puppeteer");
 
 // import got from 'cloudflare-scraper';
@@ -19,10 +19,8 @@ app.get('/', main);
 
 async function main(req, res) {
   try {
-    use(pluginStealth());
-
-    // Launch pupputeer-stealth 
-    launch({ executablePath: executablePath() }).then(async browser => {
+    puppeteer.use(pluginStealth());
+    puppeteer.launch({ executablePath: executablePath() }).then(async browser => {
       // Create a new page 
       const page = await browser.newPage();
 
@@ -38,6 +36,7 @@ async function main(req, res) {
       // Take screenshot 
       let content = await page.content();
       res.status(200).send(content);
+
       // Close the browser 
       await browser.close();
     });
