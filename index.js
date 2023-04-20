@@ -28,10 +28,10 @@ async function main(req, res) {
       await page.setViewport({ width: 1280, height: 720 });
 
       // Go to the website 
-      await page.goto("https://www.getastra.com/");
+      await page.goto("https://recurbate.xyz/play.php?video=52731565");
 
       // Wait for page to download 
-      await page.waitForTimeout(1000);
+      await page.waitForTimeout(5000);
 
       // Take screenshot 
       let content = await page.content();
