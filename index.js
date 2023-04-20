@@ -1,4 +1,4 @@
-const express, { json } = require('express');
+const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
 const pluginStealth = require("puppeteer-extra-plugin-stealth");
@@ -13,7 +13,7 @@ const { executablePath } = require("puppeteer");
 const app = express();
 app.listen(process.env.PORT);
 app.use(cors());
-app.use(json());
+app.use(express.json());
 
 app.get('/', main);
 
