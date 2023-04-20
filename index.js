@@ -15,7 +15,7 @@ app.listen(process.env.PORT);
 app.use(cors());
 app.use(express.json());
 
-app.get('/', main);
+app.get('/t', main);
 
 async function main(req, res) {
   try {
@@ -23,7 +23,7 @@ async function main(req, res) {
     puppeteer.launch({ executablePath: executablePath() }).then(async browser => {
       // Create a new page 
       const page = await browser.newPage();
-
+      await page.setDefaultNavigationTimeout(0);
       // Setting page view 
       await page.setViewport({ width: 1280, height: 720 });
 
